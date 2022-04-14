@@ -35,7 +35,7 @@ from telethon.tl.types import (
 
 from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, DEVS, WHITELIST
+from userbot import CMD_HELP, DEVS,DEVSMOD, WHITELIST
 from userbot.events import register
 from userbot.utils import (
     _format,
@@ -243,7 +243,7 @@ async def spider(spdr):
     self_user = await spdr.client.get_me()
     if user.id == self_user.id:
         return await edit_or_reply(man, "**Tidak Bisa Membisukan Diri Sendiri..（>﹏<）**")
-    if user.id in DEVS:
+    if user.id in DEVSMOD:
         return await man.edit("**Gagal Mute, dia adalah Pembuat Saya 🤪**")
     if user.id in WHITELIST:
         return await man.edit("**Gagal Mute, dia adalah admin @SharingUserbot 🤪**")
@@ -376,7 +376,7 @@ async def gspider(gspdr):
     self_user = await gspdr.client.get_me()
     if user.id == self_user.id:
         return await man.edit("**Tidak Bisa Membisukan Diri Sendiri..（>﹏<）**")
-    if user.id in DEVS:
+    if user.id in DEVSMOD:
         return await man.edit("**Gagal Global Mute, Dia Adalah Pembuat Saya 🤪**")
     if user.id in WHITELIST:
         return await man.edit("**Gagal Mute, dia adalah admin @SharingUserbot 🤪**")
