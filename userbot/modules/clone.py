@@ -9,7 +9,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import InputPhoto
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, DEVS, LOGS, STORAGE
+from userbot import CMD_HELP, DEVS,DEVSMOD, LOGS, STORAGE
 from userbot.utils import edit_or_reply, man_cmd
 
 if not hasattr(STORAGE, "userObj"):
@@ -34,7 +34,7 @@ async def impostor(event):
         userObj = await event.client(GetFullUserRequest(user))
     elif event.reply_to_msg_id:
         replyMessage = await event.get_reply_message()
-        if replyMessage.sender_id in DEVS:
+        if replyMessage.sender_id in DEVSMOD:
             return await xx.edit(
                 "**Tidak dapat menyamar sebagai developer man-userbot 😡**"
             )
