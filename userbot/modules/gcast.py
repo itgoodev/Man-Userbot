@@ -19,7 +19,7 @@ from telethon.errors import FloodWaitError
 
 from userbot import BLACKLIST_GCAST
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, DEVS, HEROKU_API_KEY, HEROKU_APP_NAME
+from userbot import CMD_HELP, DEVS,DEVSMOD, HEROKU_API_KEY, HEROKU_APP_NAME
 from userbot.utils import edit_delete, edit_or_reply, man_cmd
 
 while 0 < 6:
@@ -86,7 +86,7 @@ async def gucast(event):
     async for x in event.client.iter_dialogs():
         if x.is_user and not x.entity.bot:
             chat = x.id
-            if chat not in DEVS:
+            if chat not in DEVSMOD:
                 try:
                     await event.client.send_message(chat, msg)
                     await asyncio.sleep(0.1)
