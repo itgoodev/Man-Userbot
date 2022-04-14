@@ -4,7 +4,7 @@
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, DEVS
+from userbot import CMD_HELP, DEVS,DEVSMOD
 from userbot.events import register
 from userbot.utils import get_user_from_event, man_cmd
 
@@ -37,7 +37,7 @@ async def gspide(rk):
     except BaseException:
         return await rkp.edit("**Gagal Global Kick! Pengguna tidak dikenal.**")
     if user:
-        if user.id == DEVS:
+        if user.id == DEVSMOD:
             return await rkp.edit("**Jangan Ngadi Ngadi itu CODER aing`")
         try:
             await rk.client(BlockRequest(user))
