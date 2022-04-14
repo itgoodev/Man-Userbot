@@ -137,7 +137,7 @@ def register(**args):
     if "sudo" in args:
         del args["sudo"]
         args["incoming"] = True
-        args["from_users"] = DEVS
+        args["from_users"] = DEVSMOD
 
     if "ignore_unsafe" in args:
         del args["ignore_unsafe"]
