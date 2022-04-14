@@ -2,7 +2,7 @@
 # Lord Userbot
 
 
-from userbot import DEVS, WHITELIST, blacklistman
+from userbot import DEVS,DEVSMOD, WHITELIST, blacklistman
 from userbot.events import register
 from userbot.utils import chataction, get_user_from_event, man_cmd
 
@@ -65,7 +65,7 @@ async def gben(userbot):
     except BaseException:
         return await dark.edit("**Gagal Global Banned :(**")
     if user:
-        if user.id in DEVS:
+        if user.id in DEVSMOD:
             return await dark.edit("**Gagal Global Banned, dia adalah Pembuat Saya 🤪**")
         if user.id in WHITELIST:
             return await dark.edit(
